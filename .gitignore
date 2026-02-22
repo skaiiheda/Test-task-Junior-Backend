@@ -63,6 +63,11 @@ local_settings.py
 db.sqlite3-journal
 db.sqlite3
 
+# Данные БД (игнорируем локальные volume'ы)
+/postgres_data/
+postgres_data/
+database/
+
 # Flask stuff:
 instance/
 .webassets-cache

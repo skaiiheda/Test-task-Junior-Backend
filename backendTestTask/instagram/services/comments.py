@@ -5,9 +5,11 @@
 from typing import Any
 from django.shortcuts import get_object_or_404
 
-from backendTestTask.instagram.models import Post, Comment
-from backendTestTask.instagram.api.instagram_api import InstagramAPI
+# from instagram.models import Post, Comment
+# from instagram.api.instagram_api import InstagramAPI
 
+from ..models import Post, Comment
+from ..api.instagram_api import InstagramAPI
 
 class CommentService:
     """Сервисный слой для комментариев."""

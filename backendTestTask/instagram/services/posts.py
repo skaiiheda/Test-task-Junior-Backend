@@ -5,8 +5,10 @@
 from typing import Any
 from django.utils.dateparse import parse_datetime
 
-from backendTestTask.instagram.models import Post
-from backendTestTask.instagram.api.instagram_api import InstagramAPI
+# from instagram.models import Post
+# from instagram.api.instagram_api import InstagramAPI
+from ..models import Post
+from ..api.instagram_api import InstagramAPI
 
 
 class PostService:

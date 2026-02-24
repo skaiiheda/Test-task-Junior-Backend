@@ -21,7 +21,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 INSTAGRAM_ACCESS_TOKEN = os.getenv('INSTAGRAM_ACCESS_TOKEN')
 INSTAGRAM_USER_ID = os.getenv('INSTAGRAM_USER_ID')
 
-
+INSTAGRAM_BASE_URL = os.getenv("INSTAGRAM_BASE_URL")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -135,4 +135,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.CursorPagination',
     'PAGE_SIZE': 10,
 }
+
 

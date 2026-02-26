@@ -3,13 +3,6 @@ from rest_framework.test import APIClient
 # from instagram.models import Post
 from ..models import Post
 
-# from instagram.api.instagram_api import InstagramAPI
-from ..api.instagram_api import InstagramAPI
-
-@pytest.fixture
-def api_client() -> APIClient:
-    return APIClient()
-
 
 @pytest.mark.django_db
 class TestPostsAPI:
@@ -58,8 +51,7 @@ class TestPostsAPI:
             ]
 
         monkeypatch.setattr(
-            InstagramAPI,
-            "fetch_posts",
+            "instagram.services.posts.fetch_posts",
             mock_fetch_posts,
         )
 

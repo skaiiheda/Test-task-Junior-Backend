@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Post, Comment
+# from instagram.models import Post, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):

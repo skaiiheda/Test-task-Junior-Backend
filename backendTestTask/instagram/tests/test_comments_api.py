@@ -1,19 +1,9 @@
 import pytest
 from rest_framework.test import APIClient
-# from instagram.models import Post, Comment
-# from instagram.services import InstagramNotFoundError
-# from instagram.api.instagram_api import InstagramAPI
 from ..models import Post, Comment
-from ..exceptions import InstagramNotFoundError
-from ..api.instagram_api import InstagramAPI
-
-
-@pytest.fixture
-def api_client() -> APIClient:
-    """
-    Фикстура для создания APIClient.
-    """
-    return APIClient()
+from ..exceptions import InstagramAPIError
+# from instagram.models import Post, Comment
+# from instagram.exceptions import InstagramAPIError
 
 
 @pytest.mark.django_db
@@ -33,12 +23,11 @@ class TestCommentCreateAPI:
         - возвращается 201
         """
 
-        def mock_create_comment(instagram_id: str, text: str) -> dict:
+        def mock_create_comment(instagram_id: str, text: str) -> dict[str, str]:
             return {"id": "inst_comment_123"}
 
         monkeypatch.setattr(
-            InstagramAPI,
-            "create_comment",
+            "instagram.services.comments.instagram_create_comment",
             mock_create_comment,
         )
 
@@ -89,18 +78,15 @@ class TestCommentCreateAPI:
             monkeypatch: pytest.MonkeyPatch,
     ) -> None:
         """
-        Если InstagramAPI бросает ошибку —
+        Если Instagram API бросает ошибку —
         API возвращает 400.
         """
-
-        from instagram.exceptions import InstagramAPIError
 
         def mock_create_comment(instagram_id: str, text: str) -> dict:
             raise InstagramAPIError("Instagram error")
 
         monkeypatch.setattr(
-            InstagramAPI,
-            "create_comment",
+            "instagram.services.comments.instagram_create_comment",
             mock_create_comment,
         )
 

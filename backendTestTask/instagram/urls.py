@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import SyncPostsView, PostListView, CommentCreateView
-# from instagram.views import SyncPostsView, PostListView, CommentCreateView
+from instagram.views import SyncPostsView, PostListView, CommentCreateView
 
 urlpatterns = [
     path('sync/', SyncPostsView.as_view(), name='sync-posts'),

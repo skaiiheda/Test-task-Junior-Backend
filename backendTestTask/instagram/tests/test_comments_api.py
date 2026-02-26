@@ -1,9 +1,7 @@
 import pytest
 from rest_framework.test import APIClient
-from ..models import Post, Comment
-from ..exceptions import InstagramAPIError
-# from instagram.models import Post, Comment
-# from instagram.exceptions import InstagramAPIError
+from instagram.models import Post, Comment
+from instagram.exceptions import InstagramAPIError
 
 
 @pytest.mark.django_db

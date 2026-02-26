@@ -1,7 +1,6 @@
 import pytest
 from rest_framework.test import APIClient
-# from instagram.models import Post
-from ..models import Post
+from instagram.models import Post
 
 
 @pytest.mark.django_db
@@ -30,9 +29,9 @@ class TestPostsAPI:
         assert len(response.data["results"]) == 1
 
     def test_sync_posts(
-        self,
-        api_client: APIClient,
-        monkeypatch: pytest.MonkeyPatch,
+            self,
+            api_client: APIClient,
+            monkeypatch: pytest.MonkeyPatch,
     ) -> None:
         """
         Проверяет синхронизацию постов.

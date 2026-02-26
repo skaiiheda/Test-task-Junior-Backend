@@ -7,8 +7,7 @@ from typing import Any
 import requests
 from django.conf import settings
 
-# from instagram.exceptions import InstagramAPIError, InstagramNotFoundError
-from ..exceptions import InstagramNotFoundError, InstagramAPIError
+from instagram.exceptions import InstagramAPIError, InstagramNotFoundError
 
 def fetch_posts() -> list[dict[str, Any]]:
     """

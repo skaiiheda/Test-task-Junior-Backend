@@ -3,16 +3,11 @@ from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.pagination import CursorPagination
 
-# from instagram.models import Post
-# from instagram.serializers import PostSerializer, CommentSerializer
-# from instagram.services.comments import create_comment
-# from instagram.services.posts import sync_posts
-# from instagram.exceptions import InstagramAPIError
-from .models import Post
-from .serializers import PostSerializer, CommentSerializer
-from .services.comments import create_comment
-from .services.posts import sync_posts
-from .exceptions import InstagramAPIError
+from instagram.models import Post
+from instagram.serializers import PostSerializer, CommentSerializer
+from instagram.services.comments import create_comment
+from instagram.services.posts import sync_posts
+from instagram.exceptions import InstagramAPIError
 
 
 class PostCursorPagination(CursorPagination):

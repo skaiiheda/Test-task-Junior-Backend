@@ -5,11 +5,10 @@
 from typing import Any
 from django.shortcuts import get_object_or_404
 
-# from instagram.models import Post, Comment
-# from instagram.api.instagram_api import create_comment as instagram_create_comment
+from instagram.models import Post, Comment
+from instagram.api.instagram_api import create_comment as instagram_create_comment
 
-from ..models import Post, Comment
-from ..api.instagram_api import create_comment as instagram_create_comment
+
 
 def create_comment(post_id: int, text: str) -> Comment:
     """

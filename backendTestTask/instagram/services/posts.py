@@ -5,10 +5,8 @@
 from typing import Any
 from django.utils.dateparse import parse_datetime
 
-# from instagram.models import Post
-# from instagram.api.instagram_api import fetch_posts
-from ..models import Post
-from ..api.instagram_api import fetch_posts
+from instagram.models import Post
+from instagram.api.instagram_api import fetch_posts
 
 
 def sync_posts() -> None:

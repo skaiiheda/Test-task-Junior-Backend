@@ -48,7 +48,7 @@ cp .env.template .env
 Соберите и запустите образы с помощью следующей команды:
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
 После успешной сборки приложение будет доступно по адресу:
@@ -65,3 +65,22 @@ http://127.0.0.1:8000/
 docker compose exec app python manage.py migrate
 ```
 
+## 4️⃣ Запуск тестов
+
+🧪 Запуск тестов внутри Docker
+Для .env файла:
+```bash
+DJANGO_SETTINGS_MODULE=backendTestTask.settings
+```
+
+После запуска докер-контейнера выполните:
+
+```bash
+docker compose exec app pytest
+```
+
+С подробным выводом
+
+```bash
+docker compose exec app pytest -v
+```

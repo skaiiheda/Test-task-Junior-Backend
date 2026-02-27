@@ -37,6 +37,7 @@ cd <project_name>
 ## 2️⃣ Настройка переменных окружения
 
 Скопируйте файл .env.template, так как реальный файл игнорируется git
+
 Для .env:
 ```bash
 INSTAGRAM_BASE_URL=https://graph.instagram.com/me/media
@@ -70,7 +71,6 @@ docker compose exec app python manage.py migrate
 
 ## 4️⃣ Запуск тестов
 
-🧪 Запуск тестов внутри Docker
 Для .env файла:
 ```bash
 DJANGO_SETTINGS_MODULE=backendTestTask.settings
